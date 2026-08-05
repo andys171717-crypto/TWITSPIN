@@ -1,29 +1,717 @@
-@keyframes shineMove{
+<!DOCTYPE html>
+<html amp lang="id">
+<head>
 
-0%{
+<meta charset="utf-8">
 
-left:-80px;
-opacity:0;
+<meta name="viewport"
+content="width=device-width,minimum-scale=1,initial-scale=1">
+
+<title>TWITSPIN | Platform Resmi</title>
+
+<meta
+name="description"
+content="TWITSPIN merupakan platform resmi dengan tampilan modern, akses cepat, responsif, dan pengalaman bermain terbaik.">
+
+<meta
+name="keywords"
+content="twitspin, twit spin, twitspin resmi, twitspin login, twitspin daftar">
+
+<meta
+name="robots"
+content="index,follow">
+
+<meta
+name="author"
+content="TWITSPIN">
+
+<link
+rel="canonical"
+href="https://realtwitspin.autos/">
+
+<link
+rel="icon"
+type="image/webp"
+href="img/favicon.webp">
+
+<meta
+property="og:type"
+content="website">
+
+<meta
+property="og:title"
+content="TWITSPIN">
+
+<meta
+property="og:description"
+content="Platform Resmi TWITSPIN">
+
+<meta
+property="og:url"
+content="https://realtwitspin.autos/">
+
+<meta
+property="og:image"
+content="img/hero.webp">
+
+<meta
+name="theme-color"
+content="#081C30">
+
+<link
+rel="preload"
+as="image"
+href="img/logo.webp">
+
+<link
+rel="preload"
+as="image"
+href="img/hero.webp">
+
+<script
+async
+src="https://cdn.ampproject.org/v0.js">
+</script>
+
+<style amp-boilerplate>
+
+body{
+-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
+animation:-amp-start 8s steps(1,end) 0s 1 normal both
+}
+
+@-webkit-keyframes -amp-start{
+from{visibility:hidden}
+to{visibility:visible}
+}
+
+@keyframes -amp-start{
+from{visibility:hidden}
+to{visibility:visible}
+}
+
+</style>
+
+<noscript>
+
+<style amp-boilerplate>
+
+body{
+
+-webkit-animation:none;
+-moz-animation:none;
+-ms-animation:none;
+animation:none;
 
 }
 
-15%{
+</style>
 
-opacity:1;
+</noscript>
 
-}
+<style amp-custom>
 
-85%{
+*{
 
-opacity:1;
-
-}
-
-100%{
-
-left:260px;
-opacity:0;
+margin:0;
+padding:0;
+box-sizing:border-box;
 
 }
 
+body{
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#07192c;
+
+background-image:
+radial-gradient(circle at top,#123d67 0%,transparent 55%);
+
+color:#ffffff;
+
 }
+
+.container{
+
+max-width:420px;
+
+margin:auto;
+
+padding:18px;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:#fff;
+
+}
+
+img{
+
+max-width:100%;
+
+}
+
+.header{
+
+text-align:center;
+
+margin-bottom:18px;
+
+}
+
+.logo{
+
+margin:auto;
+
+max-width:240px;
+
+}
+
+.hero{
+
+margin-top:15px;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:
+0 0 30px rgba(0,183,255,.35);
+
+}
+
+.hero amp-img{
+
+display:block;
+
+}
+
+.headline{
+
+text-align:center;
+
+margin:18px 0 8px;
+
+}
+
+.headline h1{
+
+font-size:28px;
+
+font-weight:800;
+
+color:#ffffff;
+
+line-height:1.2;
+
+}
+
+.headline p{
+
+margin-top:8px;
+
+font-size:14px;
+
+color:#b9d7f1;
+
+line-height:1.7;
+
+}
+
+.btn{
+
+display:block;
+
+width:100%;
+
+padding:15px 20px;
+
+margin-top:14px;
+
+text-align:center;
+
+font-size:17px;
+
+font-weight:700;
+
+border-radius:14px;
+
+transition:.3s;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(
+180deg,
+#28c9ff,
+#007bff
+);
+
+box-shadow:
+0 0 18px rgba(0,170,255,.45);
+
+}
+
+.btn-primary:hover{
+
+opacity:.92;
+
+}
+
+.btn-secondary{
+
+background:#123250;
+
+border:1px solid #1d567f;
+
+}
+
+.btn-alt{
+
+background:#0d2438;
+
+border:1px solid #194a73;
+
+}
+
+.card{
+
+margin-top:22px;
+
+background:#0d2438;
+
+border:1px solid rgba(72,171,255,.18);
+
+border-radius:18px;
+
+padding:18px;
+
+box-shadow:
+0 0 18px rgba(0,110,255,.15);
+
+}
+
+.card-title{
+
+font-size:18px;
+
+font-weight:700;
+
+margin-bottom:14px;
+
+text-align:center;
+
+color:#ffffff;
+
+}
+
+.feature{
+
+display:flex;
+
+align-items:center;
+
+margin:12px 0;
+
+font-size:14px;
+
+color:#d7ebff;
+
+}
+
+.feature span{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:28px;
+
+height:28px;
+
+margin-right:10px;
+
+border-radius:50%;
+
+background:linear-gradient(
+180deg,
+#21c8ff,
+#008cff
+);
+
+font-weight:bold;
+
+color:#fff;
+
+}
+
+.footer{
+
+margin:28px 0 10px;
+
+text-align:center;
+
+font-size:12px;
+
+color:#8db3d3;
+
+}
+
+.footer a{
+
+color:#39c6ff;
+
+font-weight:700;
+
+}
+
+@media(max-width:480px){
+
+.headline h1{
+
+font-size:24px;
+
+}
+
+.btn{
+
+font-size:16px;
+
+padding:14px;
+
+}
+
+.container{
+
+padding:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+<a href="https://realtwitspin.autos/">
+
+<amp-img
+class="logo"
+src="img/logo.webp"
+width="600"
+height="160"
+layout="responsive"
+alt="TWITSPIN">
+</amp-img>
+
+</a>
+
+</header>
+
+<section class="hero">
+
+<a href="https://realtwitspin.autos/">
+
+<amp-img
+src="img/hero.webp"
+width="1200"
+height="1200"
+layout="responsive"
+alt="TWITSPIN Hero">
+</amp-img>
+
+</a>
+
+</section>
+
+<section class="headline">
+
+<h1>
+
+TWITSPIN
+
+</h1>
+
+<p>
+
+Platform resmi dengan tampilan modern,
+akses cepat, responsif, dan pengalaman terbaik.
+
+</p>
+
+</section>
+
+<a
+href="https://realtwitspin.autos/"
+class="btn btn-primary">
+
+DAFTAR SEKARANG
+
+</a>
+
+<a
+href="https://realtwitspin.autos/"
+class="btn btn-secondary">
+
+LOGIN
+
+</a>
+
+<a
+href="https://realtwitspin.autos/"
+class="btn btn-alt">
+
+LINK ALTERNATIF
+
+</a>
+
+<section class="card">
+
+<div class="card-title">
+
+Kenapa Memilih TWITSPIN?
+
+</div>
+
+<div class="feature">
+
+<span>✓</span>
+
+<div>
+
+<b>Platform Modern</b><br>
+
+Tampilan ringan, responsif, dan nyaman di semua perangkat.
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>✓</span>
+
+<div>
+
+<b>Akses Cepat</b><br>
+
+Halaman dioptimalkan agar proses akses lebih cepat.
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>✓</span>
+
+<div>
+
+<b>Desain Premium</b><br>
+
+Menggunakan tampilan modern dengan tema biru khas TWITSPIN.
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<div class="card-title">
+
+Keunggulan TWITSPIN
+
+</div>
+
+<div class="feature">
+
+<span>01</span>
+
+<div>
+
+Interface bersih dan mudah digunakan.
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>02</span>
+
+<div>
+
+Desain AMP ringan untuk pengalaman mobile yang lebih baik.
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>03</span>
+
+<div>
+
+Navigasi sederhana dengan tombol akses utama yang jelas.
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<div class="card-title">
+
+Tentang TWITSPIN
+
+</div>
+
+<p style="line-height:1.8;color:#d7ebff;font-size:14px;">
+
+TWITSPIN hadir dengan tampilan modern yang mengutamakan
+kecepatan akses, desain responsif, dan pengalaman pengguna
+yang nyaman di berbagai perangkat. Seluruh halaman dirancang
+agar ringan, mudah digunakan, dan memiliki navigasi yang jelas.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<div class="card-title">
+
+Pertanyaan Umum
+
+</div>
+
+<div class="feature">
+
+<span>?</span>
+
+<div>
+
+<b>Bagaimana cara masuk ke platform?</b><br>
+
+Klik tombol <b>LOGIN</b> atau <b>DAFTAR SEKARANG</b>
+untuk menuju halaman utama.
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>?</span>
+
+<div>
+
+<b>Apakah halaman ini mobile friendly?</b><br>
+
+Ya, seluruh layout telah dibuat responsif dan dioptimalkan
+untuk perangkat mobile.
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>?</span>
+
+<div>
+
+<b>Apakah semua tombol menuju halaman resmi?</b><br>
+
+Ya, seluruh tombol CTA mengarah ke alamat yang sama.
+
+</div>
+
+</div>
+
+</section>
+
+<a
+href="https://realtwitspin.autos/"
+class="btn btn-primary">
+
+KUNJUNGI WEBSITE RESMI
+
+<section class="card">
+
+<div class="card-title">
+
+Hubungi Kami
+
+</div>
+
+<p style="text-align:center;line-height:1.8;color:#d7ebff;font-size:14px;">
+
+Untuk informasi terbaru dan akses resmi,
+silakan gunakan seluruh tombol yang tersedia
+di halaman ini.
+
+</p>
+
+<a
+href="https://realtwitspin.autos/"
+class="btn btn-primary">
+
+MASUK KE TWITSPIN
+
+</a>
+
+</section>
+
+<footer class="footer">
+
+<p>
+
+© 2026
+
+<a href="https://realtwitspin.autos/">
+
+TWITSPIN
+
+</a>
+
+All Rights Reserved.
+
+</p>
+
+<p style="margin-top:8px;">
+
+Modern AMP Landing Page Version 2.1
+
+</p>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
+
+</a>
