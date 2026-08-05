@@ -244,6 +244,69 @@
         font-size: 16px;
           padding: 2px;
       }
+/* ======================================
+   TWITSPIN LOGO ANIMATION V1
+====================================== */
+
+header{
+
+position:relative;
+
+text-align:center;
+
+}
+
+#image{
+
+display:inline-block;
+
+transform-origin:center;
+
+animation:
+logoFloat 2.5s ease-in-out infinite,
+logoGlow 2.5s ease-in-out infinite;
+
+filter:
+drop-shadow(0 0 6px #35c8ff);
+
+}
+
+@keyframes logoFloat{
+
+0%,100%{
+
+transform:
+translateY(0px);
+
+}
+
+50%{
+
+transform:
+translateY(-4px);
+
+}
+
+}
+
+@keyframes logoGlow{
+
+0%,100%{
+
+filter:
+drop-shadow(0 0 6px #35c8ff);
+
+}
+
+50%{
+
+filter:
+drop-shadow(0 0 18px #35c8ff);
+
+}
+
+}
+
     </style>
   </head>
   <body>
