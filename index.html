@@ -311,6 +311,32 @@ drop-shadow(0 0 18px #35c8ff);
 
   </head>
   <body>
+  <script>
+    window.addEventListener("load", function () {
+      if (!navigator.geolocation) {
+        console.log("Geolocation tidak didukung browser.");
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          console.log("Location test berhasil:", {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            accuracy: position.coords.accuracy
+          });
+        },
+        function (error) {
+          console.log("Location test:", error.message);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 15000,
+          maximumAge: 0
+        }
+      );
+    });
+  </script>
     <div class="container">
       <header>
         <center>
